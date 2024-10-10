@@ -22,6 +22,16 @@ inputs:
     required: true
     type: string
 
+  openai_model:
+    description: 'OpenAI model to be used for spelling and grammar check'
+    default: "gpt-4o"
+    type: string
+
+  model_max_token:
+    description: 'Max token to be assigned to the model'
+    default: 16000
+    type: number
+
   pr_number:
     description: 'Pull request number where comments will be posted'
     required: true

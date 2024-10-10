@@ -49,7 +49,7 @@ class SpellChecker:
     def check_spelling_with_line_numbers(self, numbered_content):
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4o",
+                model=os.getenv("INPUT_OPENAI_MODEL"),
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant checking spelling and grammar."},
                     {"role": "user", "content": (
@@ -67,7 +67,7 @@ class SpellChecker:
                         f"{''.join(numbered_content)}"
                     )}
                 ],
-                max_tokens=16000
+                max_tokens=os.getenv("INPUT_MODEL_MAX_TOKEN")
             )
             return response['choices'][0]['message']['content']
         except Exception as e:
