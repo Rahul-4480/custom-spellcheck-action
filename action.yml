@@ -3,8 +3,8 @@ description: 'A GitHub Action to check spelling and grammar in markdown files us
 
 author: 'RR'
 branding:
-  color: 'blue'
-  icon: 'book'
+  color: 'green'
+  icon: 'cloud-lightning'
 
 inputs:
   openai_api_key:
