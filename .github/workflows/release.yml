@@ -17,9 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Git pull
-        run: git pull origin main
-
       - name: Release
         uses: cycjimmy/semantic-release-action@v2
         with:
@@ -28,5 +25,7 @@ jobs:
             @semantic-release/changelog@6.0.0
             @semantic-release/git@10.0.0
             conventional-changelog-conventionalcommits@4.6.3
+          branches: |
+            main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
